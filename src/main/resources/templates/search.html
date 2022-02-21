@@ -15,6 +15,7 @@
 
         <p>
             <span th:each="column : ${columns}">
+<!--                th:value was ${column.key}-->
                 <input
                         type="radio"
                         name="searchType"
@@ -28,15 +29,20 @@
 
         <p>
             <label for="searchTerm">Keyword:</label>
-            <input type="text" name="searchTerm" id="searchTerm" />
+            <input type="text" name="searchTerm" id="searchTerm" th:value="${searchTerm}" />
         </p>
 
-        <input type="submit" value="Search" />
+        <input type="submit" value="submit" />
     </form>
 
     <hr />
 
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
+<!--    <ul th:each="job:${jobs}">-->
+<!--        <li>-->
+
+<!--        </li>-->
+<!--    </ul>-->
 
 </div>
 
