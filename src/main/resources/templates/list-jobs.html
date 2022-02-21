@@ -12,6 +12,51 @@
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
 
+<!--<div >-->
+
+
+
+
+    <table th:each="job:${jobs}" class="job-listing">
+
+        <script th:inline="javascript">
+<![CDATA[
+
+    var message = [[${job}]] 'default';
+    console.log(message);
+
+]]>
+</script>
+        <tr>
+            <td>ID</td>
+            <td th:text="${job.id}">1</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td th:text="${job.name}">Junior Data Analyst</td>
+        </tr>
+        <tr>
+            <td>Employer</td>
+            <td th:text="${job.employer.value}">Lockerdome</td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td th:text="${job.location.value}">Saint Louis</td>
+        </tr>
+        <tr>
+            <td>Position Type</td>
+            <td th:text="${job.positionType.value}">Data Scientist / Business Intelligence</td>
+        </tr>
+        <tr>
+            <td>Skill</td>
+            <td th:text="${job.coreCompetency.value}">Statistical Analysis</td>
+        </tr>
+    </table>
+
+<!--    <p th:text="hi"></p>-->
+
+<!--</div>-->
+
 </div>
 
 </body>
